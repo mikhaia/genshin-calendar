@@ -7,8 +7,9 @@ $file = 'data.json';
 if (file_exists($file))
 	$data = file_get_contents($file);
 
-if (!$data) {
+if (!trim($data)) {
 	$data = file_get_contents('https://api.ambr.top/v2/en/avatar');
+	$json = json_decode($data);
 	file_put_contents($file, $data);
 	foreach($json->data->items as $item) {
 		if (!file_exists('img/'.$item->icon.'.png')) {
