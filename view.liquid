@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="favicon.jpg" type="image/jpeg">
+	<link rel="shortcut icon" href="favicon.jpg" type="image/jpeg">
+	<title>Genshin in {{ month_name }}</title>
+</head>
+<body style="background-image: url(background/{{ month }}.jpg)">
+	<div class="container">
+		<div class="title">
+			<a class="logo" href="./">Genshin Calendar</a>
+			<a href="{{ prev_link }}"><</a>
+			<h1 onclick="saveWebPage()">{{ month_name }}</h1>
+			<a href="{{ next_link }}">></a>
+		</div>
+		<div class="calendar">
+			{% for week in weeks %}
+				<div class="week">
+					{% for day in week %}
+						<div class="day {%if day == today %} today {% endif %}">
+							<b>{{ day }}</b>
+							{% assign arr = bdays[day] %}
+							<div class="events">
+							{% for bday in arr %}
+									<a style="background-image: url(img/{{ bday.icon }}.png)" class="avatar"
+										{%if bday.link %}
+											target="_blank"
+											href="{{ bday.link }}"
+										{% endif %}>
+										<div class="name">{{ bday.name }}</div>
+									</a>
+							{% endfor %}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
