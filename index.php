@@ -45,8 +45,9 @@ $days = [];
 $week = 1;
 $weeks = [];
 $bdays = [];
-$dow = intval(date('w', strtotime(date('Y-'.$month.'-'.$day))));
-while($day < date('t')) {
+$selectedTime = strtotime(date('Y-'.$month.'-'.$day));
+$dow = intval(date('w', $selectedTime)) ?: 7;
+while($day <= date('t', $selectedTime)) {
 	$days[$day] = $dow;
 	$weeks[$week][$dow] = $day;
 

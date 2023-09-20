@@ -79,6 +79,7 @@ body {
 	bottom: 0;
 	padding: 5px;
 	text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
+	font-weight: bold;
 }
 
 
