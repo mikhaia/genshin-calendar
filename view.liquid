@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="favicon.jpg" type="image/jpeg">
 	<link rel="shortcut icon" href="favicon.jpg" type="image/jpeg">
 	<title>Genshin in {{ month_name }}</title>
@@ -12,9 +12,13 @@
 	<div class="container">
 		<div class="title">
 			<a class="logo" href="./">Genshin Calendar</a>
-			<a href="{{ prev_link }}"><</a>
+			<a href="{{ prev_link }}" class="arrow"><</a>
 			<h1 onclick="saveWebPage()">{{ month_name }}</h1>
-			<a href="{{ next_link }}">></a>
+			<a href="{{ next_link }}" class="arrow">></a>
+			<div class="right-panel">
+				<a href="https://www.youtube.com/@GenshinTactics" target="_blank" class="icon"><img src="assets/img/youtube.png"></a>
+				<a href="hoyolab.com/accountCenter/postList?id=77415737" target="_blank" class="icon"><img src="assets/img/hoyolab.png"></a>
+			</div>
 		</div>
 		<div class="calendar">
 			{% for week in weeks %}
@@ -39,6 +43,29 @@
 				</div>
 			{% endfor %}
 		</div>
+
+		<!-- Yandex.Metrika informer -->
+		<a href="https://metrika.yandex.ru/stat/?id=95011868&amp;from=informer"
+		target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/95011868/1_1_868686FF_666666FF_1_pageviews"
+		style="width:80px; height:15px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры)" /></a>
+		<!-- /Yandex.Metrika informer -->
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+		   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		   m[i].l=1*new Date();
+		   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+		   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		   ym(95011868, "init", {
+		        clickmap:true,
+		        trackLinks:true,
+		        accurateTrackBounce:true
+		   });
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/95011868" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
 	</div>
 </body>
 </html>

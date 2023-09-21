@@ -12,6 +12,7 @@ body {
 
 .calendar {
 	display: inline-block;
+	padding-bottom: 20px;
 }
 
 .week {
@@ -100,7 +101,7 @@ body {
 	margin: 15px;
 }
 
-.title a {
+.title a.arrow {
 	color: #fff;
 	text-decoration: none;
 	background: rgba(255, 255, 255, .5);
@@ -112,7 +113,7 @@ body {
 	border: 1px solid #bbb;
 }
 
-.title a:hover {
+.title a.arrow:hover, .right-panel .icon:hover img {
 	box-shadow: 0 0 10px #fff;
 }
 
@@ -125,9 +126,22 @@ body {
 	width: auto;
 	padding: 15px;
 	margin-left: -15px;
+	color: #fff;
+	text-decoration: none;
 }
 
 .title .logo:hover {
 	box-shadow: none;
 	text-shadow: -2px -2px 0 #777, 2px -2px 0 #777, -2px 2px 0 #777, 2px 2px 0 #777;
+}
+
+.right-panel {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.right-panel .icon img {
+	width: 50px;
+	border-radius: 10px;
 }
