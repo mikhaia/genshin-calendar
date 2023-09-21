@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/adapt.css">
 	<link href="favicon.png" type="image/jpeg">
 	<link rel="shortcut icon" href="favicon.png" type="image/png">
 	<title>Genshin in {{ month_name }}</title>
@@ -24,9 +25,9 @@
 			{% for week in weeks %}
 				<div class="week">
 					{% for day in week %}
-						<div class="day {%if day == today %} today {% endif %}">
+						{% assign arr = bdays[day] %}
+						<div class="day {%if day == today %}today{% endif %} {%if arr %}hasevents{% endif %}">
 							<b>{{ day }}</b>
-							{% assign arr = bdays[day] %}
 							<div class="events">
 							{% for bday in arr %}
 									<a style="background-image: url(img/{{ bday.icon }}.png)" class="avatar"
