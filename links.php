@@ -34,4 +34,5 @@ $links = [
 	'Gorou' => 'https://youtube.com/shorts/h3rm7gh1l8s?feature=share',
 	'Diluc' => 'https://youtube.com/shorts/QNisWyx-3zE?feature=share',
 	'Yun Jin' => 'https://youtube.com/shorts/jC8gq9j5Unw?feature=share',
+	'Freminet' => 'https://youtu.be/ZmlS64eHvuA',
 ];
